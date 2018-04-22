@@ -1,4 +1,4 @@
-# 初始化D3D
+#初始化D3D
 >当学会了如何初始化窗口后，接下终于可以去学习Direct3D了。
 
 DirectX是由微软公司创建的多媒体编程接口, 我们的目的是在于做游戏， 因此对于API的实现其实不用那么纠结。
@@ -90,7 +90,7 @@ PresentationInterval|UNIT|控制缓冲区交换速率
 1. 修改CreateWindow
 2. 修改d3dpp
 
-CteaWindow中,dwStyle要改为WS_EX_TOPMOST | WS_POPUP, 使得当前窗口会出现在其它所用窗口之上, 窗口的初始位置和大小则随便设了(因为已经不重要了). WS_EX_TOPMOST: 当前窗口置顶.
+CteaWindow中,dwStyle要改为WS_EX_TOPMOST | WS_POPUP, 使得当前窗口会出现在其它所用窗口之上, 窗口的初始位置和大小则随便设了(因为已经不重要了). WS_EX_TOPMOST: 当前窗口置顶. 而原来的 WS_OVERLAPPEDWINDOW 就会有个标题栏
 
 d3dpp中, 得先引入一个新的变量  D3DDISPLAYMODE; 利用这个变量区查找屏幕的尺寸和颜色深度.
 
