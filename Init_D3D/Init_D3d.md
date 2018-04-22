@@ -127,6 +127,10 @@ Clear的作用便是清理后台缓冲区的.
 		d3ddev->Present(NULL, NULL, NULL, NULL);
 	}
 ```
+
+BeginScene 启动渲染
+Present 将后台缓冲区复制到视屏内存的帧缓冲区中刷新屏幕
+
 ### 5.Game End
 
 当运行结束时, 使用 Release() 将 d3d 和d3ddev资源释放.
