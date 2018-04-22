@@ -140,10 +140,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	if (!RegisterClassEx(&wc))
 		return FALSE;
 
-	//HWND hwnd = CreateWindow(APPTITLE.c_str(), APPTITLE.c_str(), WS_OVERLAPPEDWINDOW, CW_USEDEFAULT
-		//, CW_USEDEFAULT, SCREENW, SCREENH, NULL, NULL, hInstance, NULL);
-
-	HWND hwnd = CreateWindow(APPTITLE.c_str(), APPTITLE.c_str(), WS_EX_TOPMOST | WS_POPUP, 450, 450, 640, 480, NULL, NULL, hInstance, NULL);
+	//windowed
+	HWND hwnd = CreateWindow(APPTITLE.c_str(), APPTITLE.c_str(), WS_OVERLAPPEDWINDOW, 30, 50, SCREENW, SCREENH, NULL, NULL, hInstance, NULL);
+	//full screen
+	//HWND hwnd = CreateWindow(APPTITLE.c_str(), APPTITLE.c_str(), WS_EX_TOPMOST | WS_POPUP, 30, 50, SCREENW, SCREENH, NULL, NULL, hInstance, NULL);
 	//CreateWindow()
 	if (hwnd == 0) return 0;
 
