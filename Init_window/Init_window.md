@@ -29,7 +29,7 @@
 ATOM MyRegisterClass(HINSTANCE hInstance) {                      
 	WNDCLASSEX wc;                                               //窗台类
 	wc.cbSize = sizeof(WNDCLASSEX);                              //大小   cb = count of byte
-	wc.style = CS_HREDRAW | CS_VREDRAW;                          //CS_HREDRAW: 窗口移动或者宽度改变时完全重新绘制  CS_VREDRAW: 窗口高度调整后完全重新绘制   CS = Class Styles (所以..hre vre是什么单词的缩写呢？)
+	wc.style = CS_HREDRAW | CS_VREDRAW;                          //CS_HREDRAW: 窗口移动或者宽度改变时完全重新绘制  CS_VREDRAW: 窗口高度调整后完全重新绘制(REDRAW)   CS = Class Styles (所以..h是宽度？ v是高度？ 我不知道...)
 	wc.lpfnWndProc = (WNDPROC)WinProc;                           //回调函数(最重要的)
 	wc.cbClsExtra = 0;
 	wc.cbWndExtra = 0;                                           //和上一个property一样用来为窗口实例多增加一些额外空间      
