@@ -121,7 +121,7 @@ BOOL PeekMessage(
     LPMSG lpMsg,            //描述本msg的指针   LP: long pointer
     HWND hWnd,              //与该事件关联的窗口句柄
     UINT wMsgFilterMin,     //已收到的第一条信息
-    UINT wMsgFilterMax,     //已收到的最后一条星系
+    UINT wMsgFilterMax,     //已收到的最后一条信息
     UINT wRemoveMsg         //当读取该消息之后该如何处理。 PM_NOREMOVE--将消息留在队列中 PM_REMOVE--在读取消息将它从队列中移除
 );
 ```
