@@ -245,7 +245,7 @@ SPrite_Draw_Frame(texture,200,200,frame,128,128,6);
 ```
 
 ## 5. 骑士漫步
-呼，了解了这么多后， 我们可以来做一个游戏中最常见的一幕了！ 人物移动!! 这和接炸弹那种 单纯的位移是不同的， 这里的移动是伴随着动画的，并且是通过矩阵来处理移动的。d3dx中以已经帮我们完成了矩阵的处理，我们只需要调用它就行了，怎么调用呢？在draw之前调用setTransform就行了，它的参数是一个矩阵，而设置矩阵是通过D3DXMatrixTransformation2D()函数来实现的(关于这个函数的声明看<a href="https://msdn.microsoft.com/query/dev15.query?appId=Dev15IDEF1&l=ZH-CN&k=k(D3DX9MATH/D3DXMatrixTransformation2D);k(D3DXMatrixTransformation2D);k(DevLang-C++);k(TargetOS-Windows)&rd=true)">msdn</a>就行了)。 因此...我们得再创建一个新的以draw和setTransform为核心的函数，就叫它Sprite_Transform_Draw好了。 顺便一提，我们之前说过了，sprite不仅仅支持移动还支持缩放、旋转。 这些操作通过矩阵都可以完成。
+呼，了解了这么多后， 我们可以来做一个游戏中最常见的一幕了！ 人物移动!! 这和接炸弹那种 单纯的位移是不同的， 这里的移动是伴随着动画的，并且是通过矩阵来处理移动的。d3dx中以已经帮我们完成了矩阵的处理，我们只需要调用它就行了，怎么调用呢？在draw之前调用setTransform就行了，它的参数是一个矩阵，而设置矩阵是通过D3DXMatrixTransformation2D()函数来实现的(关于这个函数的声明看<a href="https://msdn.microsoft.com/query/dev15.query?appId=Dev15IDEF1&l=ZH-CN&k=k(D3DX9MATH/D3DXMatrixTransformation2D);k(D3DXMatrixTransformation2D);k(DevLang-C++);k(TargetOS-Windows)&rd=true)" target="_blank">msdn</a>就行了)。 因此...我们得再创建一个新的以draw和setTransform为核心的函数，就叫它Sprite_Transform_Draw好了。 顺便一提，我们之前说过了，sprite不仅仅支持移动还支持缩放、旋转。 这些操作通过矩阵都可以完成。
 ```
 void Sprite_Transform_Draw(LPDIRECT3DTEXTURE9 image, int x, int y, int width, int height, 
     int frame, int columns, float rotation, float scaling, D3DCOLOR color)
