@@ -48,3 +48,40 @@ bool CollisionD(SPRITE sprite1, SPRITE sprite2) {
 	return dis < radius1 + radius2;
 }
 ```
+## SPRITE？
+我们的两个碰撞检测的函数的参数都是两个SPRITE对象，这是我们新包装的一个SPRITE，因为再像之前一样用全局变量的话，应对这种参数传递，或者sprite很多后，都会挺麻烦的， 因此我们有必要写一个sprite类，把之前的那些变量全部放到一起。事实上,目前而言struct 就行了。
+```
+//sprite structure
+struct SPRITE {
+	float x, y;
+	int frame, columns;
+	int width, height;
+	float scaling, rotation;
+	int startframe, endframe;
+	int starttime, delay;
+	int direction;
+	float velx, vely;		//Velocity
+	D3DCOLOR color;
+	SPRITE() {
+		x = y = 0.0f;
+		frame = 0;
+		columns = 1;
+		width = height = 0;
+		scaling = 1.0f;
+		rotation = 0.0f;
+		startframe = endframe = 0;
+		starttime = delay = 0;
+		direction = 1;
+		velx = velx = 0.0f;
+		color = D3DCOLOR_XRGB(255, 255, 255);
+	}
+};
+```
+## 栗子
+这个例子中有三个sprite:两个陨石，一个火箭。陨石会自动的横向移动，碰到边界会反弹，碰到火箭也会反弹。 得益于我们的准备工作，已经完成了碰撞检测的函数，因此我们只需要调用它就好了。
+```
+	if (CollisionD(ship, asteroid1))
+		asteroid1.velx *= -1;
+	if (CollisionD(ship, asteroid2))
+		asteroid2.velx *= -1;
+```
