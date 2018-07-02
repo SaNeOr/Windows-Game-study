@@ -19,6 +19,8 @@ LPDIRECT3DTEXTURE9 texture = NULL;
 ```
 
 之后和surface一样， 我们需要加载一个位图。
+
+首先是获得位图的信息:
 ```
 D3DXIMAGE_INFO info;
 result = D3DXGetImageInfoFromFile("image.bmp",&info);
@@ -37,7 +39,7 @@ D3DXVECTOR2 GetBitmapSize(string filename){
     return size;
 }
 ```
-接着还是和surface一样， 将位图文件加载到texture中。不过，这里用的不再是D3DXLoadSurfaceFromFile， 而是D3DXCreateTextureFromFileEx(surface的加载用的是load，而texture用的是Create... 是不是很奇怪233...)
+接着，将位图文件加载到texture中。不过，这里用的不再是D3DXLoadSurfaceFromFile， 而是D3DXCreateTextureFromFileEx(surface的加载用的是load，而texture用的是Create... 是不是很奇怪233...)
 我们来看下D3DXCreateTextureFromFileEx的声明
 ```
 HRESULT D3DXCreateTextureFromFileEx(
